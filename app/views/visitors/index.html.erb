@@ -1,1 +1,13 @@
-<h3>Welcome</h3>
+<% provide(:title, 'About') %>
+<h1>Welcome to Sport$ Salaries</h1>
+
+<ul>
+  Select the sport league you want to explore:
+
+  <li> NBA | Basketball </li>
+  <li><%= link_to 'NBA | Basketball', '/search?sport=nba' %></li>
+
+  <li> MLB | Baseball </li>
+  <li> NHL |  Hockey </li>
+  <li> NFL |  Football </li>
+</ul> 
