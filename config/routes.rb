@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   #get '/search',      to: 'sports#index'
   #get 'teams',         to: 'teams#index'
-  get 'players',       to: 'players#index'
+  #get 'players',       to: 'players#index'
   resources  :teams
+  resources :players
 end

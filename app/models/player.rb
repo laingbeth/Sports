@@ -2,7 +2,8 @@ class Player < ActiveRecord::Base
 
   def self.party
     response = HTTParty.get "http://api.usatoday.com/open/salaries/nba?teams=timberwolves&encoding=json&api_key=rsf229wnbzyeq3cf4y6wqrfg"
-    @player_data = JSON.parse(response.body)
+    @player_data = response
   end
+
   
 end
