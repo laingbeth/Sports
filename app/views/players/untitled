@@ -1,0 +1,4 @@
+<% provide(:title, 'Add Player') %>
+<h1> Add Player Selection </h1>
+
+<%= render 'players/fields' %>

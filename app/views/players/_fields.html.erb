@@ -1,0 +1,9 @@
+<%= form_for(@player) do |f| %>
+  <% render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :player_full_name %>
+  <%= f.text.field :player_full_name, autofocus: true %>
+
+  <br>
+  <%= f.submit 'Save' %>
+  <% end %>
