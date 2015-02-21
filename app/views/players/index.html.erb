@@ -1,0 +1,36 @@
+<% provide(:title, 'Players') %>
+<h1>Players</h1>
+
+<%= @player_data %>
+
+<% @player_list = @salaries[salary] %>
+
+ <% @player_list.each do |player| %>
+  <li>
+    <%= player %>
+  </li>
+  <% end %>
+
+player[player_full_name]
+player[position_desc]
+player[salary]
+player[team_full_name]
+
+
+<table>
+    <tr>
+      <th>Player:</th>
+      <th>Position:</th>
+      <th>Salary:</th>
+      <th>Team:</th>
+    </tr>
+  <% @player_list.each do |player| %>
+
+    <tr>
+      <td><%= player.player_full_name  %>
+      <td><%=player.position_desc  %>
+      <td><%= player.salary %>
+      <td><%= player.team_full_name %>
+    </tr>
+    <% end %>
+</table>
