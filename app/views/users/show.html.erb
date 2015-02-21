@@ -4,7 +4,7 @@
 
 <h4> Added: </h4>
 <ul>
-  <% @users.players.each do |player| %>
+  <% @user.players.each do |player| %>
     <li>
       <%= link_to player.name, player_path(player) %>
       <% if current_user?(@user) %>
