@@ -1,20 +1,7 @@
 <% provide(:title, 'Players') %>
 <h1>Players</h1>
 
-<%= render @player_data %>
-
-<% @player_list = @salaries[0] %>
-
- <% @player_list.each do |player| %>
-  <li>
-    <%= player %>
-  </li>
-  <% end %>
-
-player[player_full_name]
-player[position_desc]
-player[salary]
-player[team_full_name]
+<p> <%= @player_list %> </p>
 
 
 

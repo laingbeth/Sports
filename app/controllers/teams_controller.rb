@@ -1,8 +1,8 @@
 class TeamsController < ApplicationController
 
   def index
-    @team = Team.party
-  end
+   @data = Team.party
+ end
   
 
   
