@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :teams
   resources :players
   resources :sessions, only: [:create] 
-  resources :users, except: [:new]
+  resources :users,    except: [:new]
 
   get '/signup',      to:  'users#new'
   get '/signin',      to:  'sessions#new'
