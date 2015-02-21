@@ -1,3 +1,12 @@
 <%# add navigation links to this file %>
 <li><%= link_to 'About', page_path('about') %></li>
-
+ <ul class="nav navbar-nav navbar-right">
+          <% if signed_in? %>
+            <li><%= link_to "My Profile", user_path(current_user) %></li>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+            <li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", signup_path %></li>
+            <li><%= link_to "Sign In", signin_path %></li>
+          <% end %>
+        </ul>
