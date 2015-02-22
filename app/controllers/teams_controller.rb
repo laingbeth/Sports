@@ -6,6 +6,9 @@ class TeamsController < ApplicationController
    @salaries = @data['salaries'][0]
  end
   
+  def search
+    
+  end
 
   
 end

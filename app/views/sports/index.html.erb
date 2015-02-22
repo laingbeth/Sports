@@ -1,0 +1,12 @@
+<% provide(:title, 'List of Teams') %>
+<h1>List of Teams</h1>
+
+<h3><strong><%= @metadata["leagueNiceName"]       %> </strong></h3>
+<hr/>
+
+<% @salaries["salary"].each do |salary| %>
+  <h5><%= salary["team_full_name"]  %></h5>
+
+<p><strong><%= @metadata["team_full_name"]       %> </strong></p>
+
+<% end %>

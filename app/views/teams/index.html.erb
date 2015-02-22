@@ -1,36 +1,24 @@
 <% provide(:title, 'Teams') %>
-<h1>Teams</h1>
+<h1>Team</h1>
+ You can search for your favorite team here, we'll start with the <%= link_to "timberwolves" , teams_path(team: "timberwolves") %>
 
-<h2>Salaries:</h2>
+<%= form_tag teams_path, :method => 'get' do %>
+    <%= text_field_tag :team, params[:team] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 
-<h1> <%= @metadata["leagueName"] %> Salaries for <%= @metadata["currentSeason"] %></h1>
 
-<p>Seasons:      <strong><%= @metadata["seasons"]     %> </strong></p>
+<h1> Team salaries info <%= @metadata["currentSeason"] %></h1>
+
 <p>Team:         <strong><%= @metadata["teams"]       %> </strong></p>
 <p>stdev:        <strong><%= @salaries["stdev"]       %> </strong></p>
 <p>total:        <strong><%= @salaries["total"]       %> </strong></p>
 <p>Average:      <strong><%= @salaries["average"]     %> </strong></p>
 <p>Median:       <strong><%= @salaries["med"]         %> </strong></p>
-<p>Record Count: <strong><%= @salaries["recordCount"] %> </strong></p>
+
 
 <hr/>
-
+<h4>Player     | Season  | Salary: </h4>
 <% @salaries["salary"].each do |salary| %>
-  <h3><%= salary["player_full_name"]  %></h3>
-  <ul>
-    <li>Bonuses:              <strong><%= salary["all_bonuses"]       %> </strong></li>
-    <li>Base Salary:          <strong><%= salary["base_salary"]       %> </strong></li>
-    <li>Player:               <strong><%= salary["player"]            %> </strong></li>
-    <li>First Name:           <strong><%= salary["player_first_name"] %> </strong></li>
-    <li>Last Name:            <strong><%= salary["player_last_name"]  %> </strong></li>
-    <li>Position:             <strong><%= salary["position"]          %> </strong></li>
-    <li>Position Description: <strong><%= salary["position_desc"]     %> </strong></li>
-    <li>Rank:                 <strong><%= salary["rank"]              %> </strong></li>
-    <li>Salary:               <strong><%= salary["salary"]            %> </strong></li>
-    <li>Season:               <strong><%= salary["season"]            %> </strong></li>
-    <li>Team:                 <strong><%= salary["team"]              %> </strong></li>
-    <li>Team Full Name:       <strong><%= salary["team_full_name"]    %> </strong></li>
-    <li>Team First Name:      <strong><%= salary["team_first_name"]   %> </strong></li>
-    <li>Team Last Name:       <strong><%= salary["team_last_name"]    %> </strong></li>
-  </ul>
+  <h5><%= salary["player_full_name"]  %> | <%= salary["season"]%>  | <%= salary["salary"] %></li></h5>
 <% end %>

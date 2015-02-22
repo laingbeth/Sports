@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #get '/search',      to: 'sports#index'
   #get 'teams',         to: 'teams#index'
   #get 'players',       to: 'players#index'
+  resources :sports
   resources :teams
   resources :players
   resources :sessions, only: [:create] 

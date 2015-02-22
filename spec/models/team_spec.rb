@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Team, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'sends a list of teams' do
+    FactoryGirl.create_list(:team, 1)
+  end
+
 end
