@@ -7,6 +7,7 @@ has_many :players
   end
 
   def self.search
+    team_name = team
     response = HTTParty.get "http://api.usatoday.com/open/salaries/nba?teams =#{team}&encoding=json&api_key=rsf229wnbzyeq3cf4y6wqrfg"
     @data = JSON.parse(response.body)
   end

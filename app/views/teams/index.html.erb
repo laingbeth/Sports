@@ -1,16 +1,16 @@
 <% provide(:title, 'Teams') %>
 <h1>Team</h1>
- You can search for your favorite team here, we'll start with the <%= link_to "timberwolves" , teams_path(team: "timberwolves") %>
+ You can search for your favorite team here, we'll start with the <%= link_to "Minnesota Timberwolves" , teams_path(team: "timberwolves") %>
 
 <%= form_tag teams_path, :method => 'get' do %>
-    <%= text_field_tag :team, params[:team] %>
+    <%= text_field_tag :team, params[:team_name] %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 
 
 <h1> Team salaries info <%= @metadata["currentSeason"] %></h1>
 
-<p>Team:         <strong><%= @metadata["teams"]       %> </strong></p>
+<p>Team:         <strong><%= @metadata["teams"].capitalize       %> </strong></p>
 <p>stdev:        <strong><%= @salaries["stdev"]       %> </strong></p>
 <p>total:        <strong><%= @salaries["total"]       %> </strong></p>
 <p>Average:      <strong><%= @salaries["average"]     %> </strong></p>

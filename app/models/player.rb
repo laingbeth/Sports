@@ -6,5 +6,9 @@ has_many :users
     @player_data = JSON.parse(response.body)
   end
 
+  def self.search
+    @search = params[:search]
+  end
+
   
 end

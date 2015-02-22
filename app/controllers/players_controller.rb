@@ -9,5 +9,31 @@ class PlayersController < ApplicationController
    @salaries = @player_data['salaries'][0]
   end
 
+  def show
+    
+  end
+
+  def new
+    
+  end
+
+  def favorites
+    
+  end
+private
+
+  def player_params
+    params.require(:player).permit(:name, :team, :position, :salary)
+  end
+
+  def set_player
+    @player - Player.find(params[:id])
+  end
+
+  def correct_user
+    unless current_user?(@player.user) || current_user.admin?
+      redirect_to user_path(current_user)
+    end  
+  end
 
 end

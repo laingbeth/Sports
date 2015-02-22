@@ -7,7 +7,9 @@ class TeamsController < ApplicationController
  end
   
   def search
-    
+    @data = Team.search
+    @metadata = @data['rootmetadata'][0]
+    @salaries = @data['salaries'][0]
   end
 
   
