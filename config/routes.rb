@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  root 'visitors#index'
 
   get '/search',      to: 'teams#index'
   #get 'teams',         to: 'teams#index'

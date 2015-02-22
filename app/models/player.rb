@@ -10,5 +10,10 @@ has_many :users
     @search = params[:search]
   end
 
-  
+  validates :player_full_name, presence: true, length: { minimum: 10, maximum: 100 }
+  validates :salary, presence: true
+  validates :user_id, presence: true
+  validates :season, presence: true
+  validates :team_full_name, presence: true, length: { minimum: 10, maximum: 100 }  
+  validates :position_description, presence: true, length: { minimum: 3, maximum: 100 }
 end
