@@ -7,10 +7,7 @@ class Player < ActiveRecord::Base
     @player_data = JSON.parse(response.body)
   end
 
-  validates :player_full_name, presence: true, length: { minimum: 10, maximum: 100 }
-  validates :salary, presence: true
-  validates :user_id, presence: true
-  validates :season, presence: true
-  validates :team_full_name, presence: true, length: { minimum: 10, maximum: 100 }
-  validates :position_description, presence: true, length: { minimum: 3, maximum: 100 }
+  # validates :player_full_name, presence: true, length: { minimum: 10, maximum: 99 }
+  # validates :salary, presence: true
+
 end

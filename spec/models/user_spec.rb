@@ -1,7 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  it 'should include name, email and password' do
-    FactoryGirl.create_list(:player, 1)
+  describe User do 
+    it 'is valid with a name, email and password' do  
+     FactoryGirl.create_list(:user, 1)
+    expect(user).to be_valid 
+    end
   end
-end
+    
