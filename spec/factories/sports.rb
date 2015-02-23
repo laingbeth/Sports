@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :sport do
-    league 'MyString'
-    sport_name 'MyString'
+    league 'nba'
+    sport_name 'basketball'
   end
 end

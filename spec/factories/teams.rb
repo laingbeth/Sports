@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :team do
-    team 'spurs'
-    team_id 1
+    team_full_name 'spurs'
     sport 'nba'
   end
 end
