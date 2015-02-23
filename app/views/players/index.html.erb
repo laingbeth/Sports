@@ -1,8 +1,7 @@
 <% provide(:title, 'Players') %>
 <h1>Players</h1>
 
-<H2>Team Name:         <strong><%= @metadata["teams"].capitalize       %> </strong></h2>
-<p>Number of players listed: <strong><%= @salaries["recordCount"] %> </strong></p>
+<p>Number of players: <strong><%= @salaries["recordCount"] %> </strong></p>
 
 <hr/>
 
@@ -14,8 +13,9 @@
     <li>Rank:                 <strong><%= salary["rank"]              %> </strong></li>
     <li>Salary:               <strong><%= salary["salary"]            %> </strong></li>
     <li>Season:               <strong><%= salary["season"]            %> </strong></li>
-    <li>Bonuses:              <strong><%= salary["all_bonuses"]       %> </strong></li>
+    <li>Team:                 <strong><%= salary["team_full_name"]    %> </strong></li>
     <li>Base Salary:          <strong><%= salary["base_salary"]       %> </strong></li>
+    <li>Bonuses:              <strong><%= salary["all_bonuses"]       %> </strong></li> 
   </ul>
 <% end %>
 

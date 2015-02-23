@@ -1,24 +1,23 @@
 <% provide(:title, 'Teams') %>
 <h1>Team</h1>
- You can search for your favorite team here, we'll start with the <%= link_to "Minnesota Timberwolves" , teams_path(team: "timberwolves") %>
+ <p>You can search for your favorite team here, if you need a suggestion, how about the timerwolves. </p>
 
-<%= form_tag teams_path, :method => 'get' do %>
-    <%= text_field_tag :team, params[:team_name] %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+    <%= form_tag teams_path, :method => 'get' do %>
+      <%= text_field_tag :team_name, params[:team_name], autofocus: true %>
+      <%= submit_tag "Search", :name => nil %>
 
+  <h1> Team salaries info <%= @metadata["currentSeason"] %></h1>
+  <h1> Team: <%= @metadata["teams"] %></h1>
 
-<h1> Team salaries info <%= @metadata["currentSeason"] %></h1>
-
-<p>Team:         <strong><%= @metadata["teams"].capitalize       %> </strong></p>
-<p>stdev:        <strong><%= @salaries["stdev"]       %> </strong></p>
-<p>total:        <strong><%= @salaries["total"]       %> </strong></p>
-<p>Average:      <strong><%= @salaries["average"]     %> </strong></p>
-<p>Median:       <strong><%= @salaries["med"]         %> </strong></p>
+  <p>stdev:        <strong><%= @salaries["stdev"]       %> </strong></p>
+  <p>total:        <strong><%= @salaries["total"]       %> </strong></p>
+  <p>Average:      <strong><%= @salaries["average"]     %> </strong></p>
+  <p>Median:       <strong><%= @salaries["med"]         %> </strong></p>
 
 
-<hr/>
-<h4>Player     | Season  | Salary: </h4>
-<% @salaries["salary"].each do |salary| %>
-  <h5><%= salary["player_full_name"]  %> | <%= salary["season"]%>  | <%= salary["salary"] %></li></h5>
-<% end %>
+  <hr/>
+  <h4>Player     | Season  | Salary: </h4>
+  <% @salaries["salary"].each do |salary| %>
+    <h5><%= salary["player_full_name"]  %> | <%= salary["season"]%>  | <%= salary["salary"] %></li></h5>
+  <% end %>
+  <% end %>

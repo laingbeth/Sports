@@ -1,24 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe Player, type: :model do
-let(:player) { Player.new 
-  player_full_name "LeBron James"
-salary 12,000,000
-position_desc "center"
-team_full_name "Cleveland Cavaliers"
-season 2013
-user_id 1
-}
+  let(:player) do
+    Player.new
+    player_full_name 'LeBron James'
+    salary 12, 000, 000
+    position_desc 'center'
+    team_full_name 'Cleveland Cavaliers'
+    season 2013
+    user_id 1
+  end
 
-subject { player }
+  subject { player }
 
-it { should respond_to(:player_full_name) } # item.name returns anything but an error
+  it { should respond_to(:player_full_name) } # item.name returns anything but an error
   it { should respond_to(:salary) }
   it { should respond_to(:position_desc) }
   it { should respond_to(:team_full_name) }
   it { should respond_to(:season) }
   it { should respond_to(:user_id) }
-
 
   it { should be_valid } # It passes all validations
 
@@ -46,6 +46,5 @@ it { should respond_to(:player_full_name) } # item.name returns anything but an 
         it { should_not be_valid }
       end
     end
-
   end
 end

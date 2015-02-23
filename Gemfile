@@ -20,16 +20,16 @@ gem 'pg'
 gem 'simple_form'
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'binding_of_caller', platforms: [:mri_21]
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem 'hub', :require=>nil
+  gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'rb-fchange', :require=>false
-  gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
+  gem 'rb-fchange', require: false
+  gem 'rb-fsevent', require: false
+  gem 'rb-inotify', require: false
   gem 'spring-commands-rspec'
 end
 group :development, :test do
